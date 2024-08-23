@@ -1,5 +1,5 @@
 
-from dagster_dbt import DbtCliClientResource
+from dagster_dbt import DbtCliResource
 
 from ..project import dbt_project
 
@@ -9,8 +9,8 @@ import boto3
 from dagster import EnvVar
 from dagster_duckdb import DuckDBResource
 
-dbt_resourse = DbtCliClientResource(
-    project_dir=dbt_project
+dbt_resource = DbtCliResource(
+    project_dir=dbt_project,
 )
 
 database_resource = DuckDBResource(
